@@ -115,6 +115,7 @@
             MainMenuStrip = mainMenu;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             Paint += ReDraw;
             mainMenu.ResumeLayout(false);
             mainMenu.PerformLayout();

@@ -3,8 +3,14 @@ using GraphicEditor.Models;
 
 namespace GraphicEditor.Services
 {
-    public class ShapeService : DrawService, IShapeService
+    public class ShapeService : IShapeService
     {
+        public ShapeService()
+        {
+            Shapes = new List<IShape>();   
+        }
+
+        public IList<IShape> Shapes { get; set; }
         public IShape Selected {  get; set; }
         public bool IsDragging { get; set; }
         public PointF LastLocation { get; set; }

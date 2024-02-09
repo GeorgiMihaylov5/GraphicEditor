@@ -5,16 +5,9 @@ namespace GraphicEditor.Services
 {
     public class DrawService : IDrawService
     {
-        public DrawService()
+        public void Draw(Graphics grfx, IList<IShape> shapes)
         {
-            Shapes = new List<IShape>();    
-        }
-
-        public IList<IShape> Shapes {  get; set; }
-
-        public void Draw(Graphics grfx)
-        {
-            foreach (Shape item in Shapes)
+            foreach (Shape item in shapes)
             {
                 DrawShape(grfx, item);
             }

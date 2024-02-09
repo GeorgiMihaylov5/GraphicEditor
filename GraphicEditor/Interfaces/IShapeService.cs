@@ -4,6 +4,7 @@ namespace GraphicEditor.Interfaces
 {
     public interface IShapeService
     {
+        public IList<IShape> Shapes { get; set; }
         public IShape Selected { get; set; }
         public bool IsDragging { get; set; }
         public PointF LastLocation { get; set; }

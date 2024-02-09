@@ -1,3 +1,7 @@
+using GraphicEditor.Interfaces;
+using GraphicEditor.Services;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace GraphicEditor
 {
     internal static class Program
@@ -11,7 +15,14 @@ namespace GraphicEditor
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var serviceProvider = new ServiceCollection()
+                .AddTransient<Form1>()
+                .AddTransient<IDrawService, DrawService>()
+                .AddTransient<IShapeService, ShapeService>()
+                .BuildServiceProvider();
+
+            Application.Run(serviceProvider.GetRequiredService<Form1>());
         }
     }
 }

@@ -2,8 +2,7 @@
 {
     public interface IDrawService
     {
-        public IList<IShape> Shapes { get; set; }
-        public void Draw(Graphics grfx);
+        public void Draw(Graphics grfx, IList<IShape> shapes);
         public void DrawShape(Graphics grfx, IShape shape);
     }
 }
