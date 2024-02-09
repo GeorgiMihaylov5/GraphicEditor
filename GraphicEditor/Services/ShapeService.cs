@@ -16,14 +16,14 @@ namespace GraphicEditor.Services
         public bool IsDragging { get; set; }
         public PointF LastLocation { get; set; }
 
-        public void AddRandomShape<T>() where T : IShape,  new()
+        public void AddRandomShape<T>(int width = 100, int height = 200) where T : IShape,  new()
         {
             var rnd = new Random();
             var x = rnd.Next(100, 1000);
             var y = rnd.Next(100, 600);
 
             var shape = new T();
-            var rect = new Rectangle(x, y, 100, 200);
+            var rect = new Rectangle(x, y, width, height);
 
             shape.Rectangle = rect;
             shape.FillColor = Color.White;

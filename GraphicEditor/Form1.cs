@@ -38,5 +38,21 @@ namespace GraphicEditor
         {
 
         }
+
+        private void DrawCircleBtn_Click(object sender, EventArgs e)
+        {
+            shapeService.AddRandomShape<CircleShape>(height: 100);
+
+            //statusBar.Items[0].Text = "Последно действие: Рисуване на правоъгълник";
+            Invalidate();
+        }
+
+        private void DrawEllipseBtn_Click(object sender, EventArgs e)
+        {
+            shapeService.AddRandomShape<EllipseShape>();
+
+            //statusBar.Items[0].Text = "Последно действие: Рисуване на правоъгълник";
+            Invalidate();
+        }
     }
 }
