@@ -1,6 +1,4 @@
-﻿using GraphicEditor.Models;
-
-namespace GraphicEditor.Interfaces
+﻿namespace GraphicEditor.Interfaces
 {
     public interface IShapeService
     {
