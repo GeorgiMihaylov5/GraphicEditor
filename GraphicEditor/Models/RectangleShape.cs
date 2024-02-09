@@ -2,11 +2,10 @@
 {
     public class RectangleShape : Shape
     {
-        public RectangleShape(RectangleF rect) : base(rect)
-        { }
+        public RectangleShape() : base() { }
+        public RectangleShape(RectangleF rect) : base(rect) { }
 
-        public RectangleShape(RectangleShape rectangle) : base(rectangle)
-        { }
+        public RectangleShape(RectangleShape rectangle) : base(rectangle) { }
 
         public override void DrawSelf(Graphics grfx)
         {

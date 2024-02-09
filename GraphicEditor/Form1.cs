@@ -1,5 +1,5 @@
 ﻿using GraphicEditor.Interfaces;
-using GraphicEditor.Services;
+using GraphicEditor.Models;
 
 namespace GraphicEditor
 {
@@ -17,7 +17,7 @@ namespace GraphicEditor
 
         private void DrawRectangleBtn_Click(object sender, EventArgs e)
         {
-            shapeService.AddRandomRectangle();
+            shapeService.AddRandomShape<RectangleShape>();
 
             //statusBar.Items[0].Text = "Последно действие: Рисуване на правоъгълник";
             Invalidate();

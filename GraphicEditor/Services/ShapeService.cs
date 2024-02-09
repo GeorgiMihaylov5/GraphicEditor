@@ -1,5 +1,6 @@
 ﻿using GraphicEditor.Interfaces;
 using GraphicEditor.Models;
+using System.Xml;
 
 namespace GraphicEditor.Services
 {
@@ -15,33 +16,19 @@ namespace GraphicEditor.Services
         public bool IsDragging { get; set; }
         public PointF LastLocation { get; set; }
 
-        public void AddRandomCircle()
+        public void AddRandomShape<T>() where T : IShape,  new()
         {
-            Random rnd = new Random();
-            int x = rnd.Next(100, 1000);
-            int y = rnd.Next(100, 600);
+            var rnd = new Random();
+            var x = rnd.Next(100, 1000);
+            var y = rnd.Next(100, 600);
 
-            var rect = new RectangleShape(new Rectangle(x, y, 100, 200));
-            rect.FillColor = Color.White;
+            var shape = new T();
+            var rect = new Rectangle(x, y, 100, 200);
 
-            Shapes.Add(rect);
-        }
+            shape.Rectangle = rect;
+            shape.FillColor = Color.White;
 
-        public void AddRandomEllipse()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddRandomRectangle()
-        {
-            Random rnd = new Random();
-            int x = rnd.Next(100, 1000);
-            int y = rnd.Next(100, 600);
-
-            var rect = new RectangleShape(new Rectangle(x, y, 100, 200));
-            rect.FillColor = Color.White;
-
-            Shapes.Add(rect);
+            Shapes.Add(shape);
         }
 
         public IShape ContainsPoint(PointF point)

@@ -87,7 +87,7 @@
             // DrawRectangleBtn
             // 
             DrawRectangleBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            DrawRectangleBtn.Image = Properties.Resources.rectangle2;
+            DrawRectangleBtn.Image = (Image)resources.GetObject("DrawRectangleBtn.Image");
             DrawRectangleBtn.ImageTransparentColor = Color.Magenta;
             DrawRectangleBtn.Name = "DrawRectangleBtn";
             DrawRectangleBtn.Size = new Size(24, 24);
